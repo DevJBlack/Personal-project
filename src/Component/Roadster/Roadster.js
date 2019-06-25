@@ -20,6 +20,7 @@ const styles = {
     backgroundRepeat: 'no-repeat',
     /* background-attachment: fixed; */
     backgroundSize: 'cover',
-    backgroundPosition: 'center'
+    backgroundPosition: 'center',
+    color: 'black'
   }
 }
