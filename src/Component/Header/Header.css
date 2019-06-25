@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.navbar {
+/* .navbar {
   height: 52px;
   width: 100%;
   display: flex;
@@ -12,18 +12,17 @@
   align-items: center;
   color: transparent;
   padding: 0 20px;
-}
+} */
 
-.tesla-name {
+/* .tesla-name {
   height: 13px;
-  
-}
+} */
 
-.label {
+/* .label {
   color: white;
   font-size: 18px;
-  display: none;
-}
+  display: block;
+} */
 
 .menu {
   display: flex;
@@ -47,19 +46,23 @@
   .label {
     display: block;
   }
+ 
   .menu {
-    text-align: center;
+    display: none;
     width: 50%;
     z-index: 10;
-    display: none;
+    text-align: center;
   }
-  .menu a {
+
+   .menu a {
     display: block;
-    background: white;
-    margin: 0;
-    color: black;
+    flex-direction: column;
+    color: rgb(240, 240, 93);
+    border: 1px solid black;
+    padding: 25px;
+
   }
-  #toggle:checked + .menu {
+  #toggle:checked ~ .menu {
     display: block;
   }
 }

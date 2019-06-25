@@ -7,6 +7,8 @@ import Model_X from './Component/Model-X/Model-X'
 import Model_Y from './Component/Model-Y/Model-Y'
 import Roadster from './Component/Roadster/Roadster'
 import Energy from './Component/Energy/Energy'
+import Signin from './Component/Sign-In/Sign-In'
+import Shop from './Component/Shop/Shop'
 
 export default (
   <Switch>
@@ -17,5 +19,7 @@ export default (
     <Route path="/modely" component={Model_Y} />
     <Route path="/roadster" component={Roadster} />
     <Route path="/energy" component={Energy} />
+    <Route path="/signin" component={Signin} />
+    <Route path="/shop" component={Shop} />
   </Switch>
 )
