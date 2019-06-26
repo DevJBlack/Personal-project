@@ -3,7 +3,8 @@ const massive = require('massive')
 const session = require('express-session')
 require('dotenv/config')
 
-const AuthCtrl = require('./controllers')
+const AuthCtrl = require('./controllers/auth')
+const ProductCtrl = require('./controllers/products')
 
 const app = express()
 
@@ -29,3 +30,6 @@ app.post('/auth/register', AuthCtrl.register)
 app.post('/auth/login', AuthCtrl.login)
 app.get('/auth/logout', AuthCtrl.logout)
 app.get('/auth/currentUser', AuthCtrl.currentUser)
+
+app.get('/api/products', ProductCtrl.products)
+app.get('/api/products/:id', ProductCtrl.getProduct)
