@@ -21,5 +21,24 @@ module.exports = {
         console.log('error fetching posts:', error)
         res.status(500).send(error) 
     }
+  },
+  createProduct: async (req, res) => {
+    try {
+        let db = req.app.get('db')
+        const { name, disc, price, image_url } = req.body
+
+        let products = await db.create_products({
+          name, 
+          disc, 
+          price, 
+          image_url
+        })
+
+        res.send(products)
+
+    } catch ( error ) {
+        console.log('error fetching posts:', error)
+        res.status(500).send(error) 
+    }
   }
 }

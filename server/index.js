@@ -33,3 +33,4 @@ app.get('/auth/currentUser', AuthCtrl.currentUser)
 
 app.get('/api/products', ProductCtrl.products)
 app.get('/api/products/:id', ProductCtrl.getProduct)
+app.post('/api/products', ProductCtrl.createProduct)

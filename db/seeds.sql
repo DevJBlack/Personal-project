@@ -86,3 +86,15 @@ insert into products (
 
 values('Corded Mobile Connector','The Corded Mobile Connector has an integrated 240 volt 50 amp rated plug for high power output. A seamless design provides a low profile connection, allowing for use with covered outdoor outlets.', 520, 'https://shop.tesla.com/content/dam/tesla/CAR_ACCESSORIES/MODEL_X/CHARGING_ADAPTERS/1106293-00-A_0.jpg')
 
+
+    insert into products (
+    name,
+    disc,
+    price,
+    image_url
+)
+
+	values(name: "Semi",
+	disc: "Semi is the safest, most comfortable truck ever. Four independent motors provide maximum power and acceleration and require the lowest energy cost ",
+	price: 200000,
+	image_url: "https://amp.businessinsider.com/images/5c6ec80a342cca0349392a33-750-563.jpg")
