@@ -16,8 +16,9 @@
   text-transform: uppercase;
   font-weight: bold;
   line-height: 20px;
-
 }
+
+
 
 #toggle {
   display: none;
@@ -35,7 +36,7 @@
     z-index: 10;
   }
   
-  .menu a {
+  .menu > a {
    
     display: block;
     flex-direction: column;

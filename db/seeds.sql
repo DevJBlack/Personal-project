@@ -2,7 +2,7 @@ CREATE TABLE admin (
     admin_id SERIAL PRIMARY KEY,
     name VARCHAR, 
     email VARCHAR,
-    password VARCHAR(50)
+    password VARCHAR(255)
 ),
 CREATE TABLE products (
     products_id SERIAL PRIMARY KEY,

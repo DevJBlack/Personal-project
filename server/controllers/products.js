@@ -40,5 +40,41 @@ module.exports = {
         console.log('error fetching posts:', error)
         res.status(500).send(error) 
     }
+  },
+
+  deleteProduct: async (req, res) => {
+    try {
+        let db = req.app.get('db')
+        const { id } = req.params
+
+        let products = await db.delete_product(id)
+         res.send(products)
+
+    } catch ( error ) {
+        console.log('error fetching posts:', error)
+        res.status(500).send(error) 
+    }
+  },
+
+  updateProduct: async (req, res) => {
+    try {
+        let db = req.app.get('db')
+        const { name, disc, price, image_url } = req.body
+        const { id } = req.params
+
+        let products = await db.update_products({
+          id,
+          name, 
+          disc, 
+          price, 
+          image_url
+        })
+
+        res.send(products)
+
+    } catch ( error ) {
+        console.log('error fetching posts:', error)
+        res.status(500).send(error) 
+    }
   }
 }
