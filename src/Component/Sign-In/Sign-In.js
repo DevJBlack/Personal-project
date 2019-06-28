@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import LoginForm from './LoginForm'
-import { logout } from '../../redux/reducers/admin'
+import { logout, getAdmin } from '../../redux/reducers/admin'
+
 
 function Sign(props){
   let { admin } = props
+  useEffect(() => {
+    props.getAdmin()
+  },[props])
   return (
     <div style={styles.img}>
       <div >
@@ -13,8 +17,11 @@ function Sign(props){
         <Link to="/"><img style={styles.teslaName} src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTMiPjxwYXRoIGQ9Ik0wIDBjLjMgMS4xIDEuMyAyLjMgMi42IDIuNmg0LjFsLjIuMVYxM2gyLjVWMi43bC4yLS4xaDQuMWMxLjQtLjQgMi4zLTEuNSAyLjYtMi42SDB6bTc3LjggMTNjMS4zLS41IDItMS41IDIuMi0yLjZINjguN1YtLjFoLTIuNXYxM2gxMS42ek00Ny4zIDIuNmg5YzEuMy0uNCAyLjUtMS40IDIuNy0yLjZINDQuOHY3LjdoMTEuNnYyLjdoLTkuMWMtMS40LjQtMi42IDEuNC0zLjIgMi42SDU5VjUuMkg0Ny4zVjIuNnptMzguMSAyLjZWMTNIODhWNy44aDkuMVYxM2gyLjZWNS4yTTI1LjIgMi42aDkuN2MxLjMtLjMgMi40LTEuNSAyLjYtMi42aC0xNWMuNCAxLjIgMS40IDIuMyAyLjcgMi42bTAgNS4yaDkuN2MxLjMtLjMgMi40LTEuNSAyLjYtMi42aC0xNWMuNCAxLjEgMS40IDIuMyAyLjcgMi42bTAgNS4yaDkuN2MxLjMtLjMgMi40LTEuNSAyLjYtMi42aC0xNWMuNCAxLjIgMS40IDIuNCAyLjcgMi42TTg3LjcgMi42aDkuN2MxLjMtLjMgMi40LTEuNSAyLjYtMi42SDg1Yy4zIDEuMiAxLjMgMi40IDIuNyAyLjYiIGZpbGw9IiNGRkYiLz48L3N2Zz4=" alt=""/> </Link>
         </nav>
       </div>
-        { admin ? <h1>{admin.name} </h1> && <button onClick={() => props.logout()}>Logout</button> : <LoginForm></LoginForm>}
-      {/* { admin ? <h1>Welcome, {admin.name} </h1> : <LoginForm></LoginForm>} */}
+        { admin ? 
+        <div>
+        <h1>Welcome {admin.name}! </h1> 
+        <button onClick={() => props.logout()}>Logout</button>
+        </div> : <LoginForm></LoginForm>}
     </div>
   )
 }
@@ -24,7 +31,7 @@ let mapStateToProps = state => {
   return { admin }
 }
 
-export default connect(mapStateToProps, { logout })(Sign)
+export default connect(mapStateToProps, { logout, getAdmin })(Sign)
 
 const styles = {
   img: {
