@@ -61,7 +61,7 @@ module.exports = {
         let db = req.app.get('db')
         const { name, disc, price, image_url } = req.body
         const { id } = req.params
-
+        console.log(req.body,req.params)
         let products = await db.update_products({
           id,
           name, 
