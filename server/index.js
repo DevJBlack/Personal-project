@@ -32,7 +32,8 @@ app.get('/auth/logout', AuthCtrl.logout)
 app.get('/auth/currentUser', AuthCtrl.currentUser)
 
 app.get('/api/products', ProductCtrl.products)
-app.get('/api/products/:id', ProductCtrl.getProduct)
+app.get('/api/product/:id', ProductCtrl.getProduct)
 app.post('/api/products', ProductCtrl.createProduct)
 app.delete('/api/products/:id', ProductCtrl.deleteProduct)
 app.put('/api/products/:id', ProductCtrl.updateProduct)
+

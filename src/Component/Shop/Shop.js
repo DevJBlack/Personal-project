@@ -48,6 +48,13 @@ function Shop(props){
       })
     })
   }
+
+
+  function viewProduct(product){
+    props.history.push(`/product/${product.products_id}`)
+  }
+
+
   return (
     <div style={styles.img}>
       <div>
@@ -56,16 +63,16 @@ function Shop(props){
         <Link to="/" style={styles.linkText}><p style={styles.imgWord}> | Shop </p></Link>
         </nav>
       </div>
-      {products.map((products) => {
+      {products.map((product) => {
         return(
-          <div key={products.products_id} style={styles.productDiv} >
-            <div >Name: {products.name}</div>
-            <div >Description: {products.disc}</div>
-            <div >Price: {products.price}</div>
-            <img width="300px" src={products.image_url} alt=""/>
+          <div key={product.products_id} style={styles.productDiv} >
+            <div >Name: {product.name}</div>
+            <div >Description: {product.disc}</div>
+            <div >Price: {product.price}</div>
+            <img width="300px" src={product.image_url} alt=""/>
               <div>
                 {/* { props.admin ? <button onClick={() => deleteProduct(products.products_id)}>Delete</button> : null} */}
-                <button onClick={() => deleteProduct(products.products_id)}>Delete</button>
+                <button onClick={() => deleteProduct(product.products_id)}>Delete</button>
               
                   <div>
                   <input
@@ -92,7 +99,8 @@ function Shop(props){
                     placeholder="image_url"
                     onChange={handleUpdate}
                     />
-                  <button onClick={()=> updateProduct(products.products_id, edit)}>Update Confirm</button> 
+                  <button onClick={()=> updateProduct(product.products_id, edit)}>Update Confirm</button> 
+                  <button onClick={() => viewProduct(product)} >View Product</button>
                   </div>
                 
               </div>

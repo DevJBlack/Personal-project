@@ -10,6 +10,7 @@ import Energy from './Component/Energy/Energy'
 import Signin from './Component/Sign-In/Sign-In'
 import Shop from './Component/Shop/Shop'
 import BuildYourOwn from './Component/Shop/Build_Your_Own'
+import Product from './Component/Shop/Product'
 
 export default (
   <Switch>
@@ -23,5 +24,6 @@ export default (
     <Route path="/signin" component={Signin} />
     <Route path="/shop" component={Shop} />
     <Route path="/build" component={BuildYourOwn}/>
+    <Route path="/product/:id" component={Product}/>
   </Switch>
 )
