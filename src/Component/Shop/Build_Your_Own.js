@@ -14,6 +14,8 @@ function BuildYourOwn(props){
     image_url: ''
   })
 
+
+
   function handleChange(e){
     const {name, value} = e.target
     setCreate({
@@ -21,6 +23,7 @@ function BuildYourOwn(props){
       [name]: value
     })
   }
+
 
   
   function buildCar(){

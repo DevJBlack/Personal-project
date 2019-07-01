@@ -59,9 +59,11 @@ module.exports = {
   updateProduct: async (req, res) => {
     try {
         let db = req.app.get('db')
-        const { name, disc, price, image_url } = req.body
-        const { id } = req.params
+        let { name, disc, price, image_url } = req.body.edit
+        let { id } = req.params
         console.log(req.body,req.params)
+        id = +id
+        price = +price
         let products = await db.update_products({
           id,
           name, 
@@ -69,7 +71,7 @@ module.exports = {
           price, 
           image_url
         })
-
+        // console.log(products)
         res.send(products)
 
     } catch ( error ) {

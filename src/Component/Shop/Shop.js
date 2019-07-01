@@ -48,7 +48,6 @@ function Shop(props){
       })
     })
   }
-  console.log(edit)
   return (
     <div style={styles.img}>
       <div>
