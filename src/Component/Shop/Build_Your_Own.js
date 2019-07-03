@@ -26,10 +26,12 @@ function BuildYourOwn(props){
 
 
   
-  function buildCar(){
-    console.log(create)
-      axios.post('/api/products', create).then(res => {
+   function buildCar(){
+    // console.log(create)
+    // console.log(setCreate)
+        axios.post('/api/products', create).then(res => {
         setCreate(res.data)
+        props.history.push('/shop')
       })  
     }
   
@@ -67,18 +69,15 @@ function BuildYourOwn(props){
         placeholder="image_url"
         onChange={handleChange}
         />
-      <Link to="/shop" >
       <button onClick={buildCar}>Build Your Own</button>
-      </Link>
      </div>
     </div>
   )
 }
 
 let mapStateToProps = reduxState => {
-  console.log(reduxState)
-  let { data: create } = reduxState.products
-  return { create }
+  let { data } = reduxState.products
+  return { data }
 }
 
 export default connect(mapStateToProps, { createProducts })(BuildYourOwn)

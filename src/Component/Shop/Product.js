@@ -6,32 +6,28 @@ import axios from 'axios';
 function Product(props){
   const [ product, setProduct ] = useState({})
   const [ amount, setAmount ] = useState(0)
-  // if (!amount) {
-  //   setAmount(product.price)
-  // } 
+  
 
   let { id } = props.match.params
-  // let { price } = product
-  // console.log(product.price)
-
+ 
 
   useEffect(() => {
     axios.get(`/api/product/${id}`).then(res => {
       setProduct(res.data)
-      console.log(res.data)
+      // console.log(res.data)
       setAmount(res.data.price)
     })
   }, [id])
 
 
   async function onToken(token){
-    console.log(token)
+    // console.log(token)
     await setAmount(amount)
-    console.log(amount)
+    // console.log(amount)
     token.card = void 0
     axios.post('/api/payment', { token, amount }).then(res => {
-      console.log(res)
-      alert(`Congratulations on your new ${product.name}!`)
+      // console.log(res)
+      alert(`Congratulations on buying your new ${product.name}!`)
       props.history.push('/')
     })
   }
