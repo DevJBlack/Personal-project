@@ -5,6 +5,7 @@ require('dotenv/config')
 
 const AuthCtrl = require('./controllers/auth')
 const ProductCtrl = require('./controllers/products')
+const stripeCtrl = require('./controllers/stripCtrl')
 
 const app = express()
 
@@ -37,3 +38,4 @@ app.post('/api/products', ProductCtrl.createProduct)
 app.delete('/api/products/:id', ProductCtrl.deleteProduct)
 app.put('/api/products/:id', ProductCtrl.updateProduct)
 
+app.post('/api/payment', stripeCtrl.pay)
