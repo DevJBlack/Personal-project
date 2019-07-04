@@ -24,6 +24,19 @@ CREATE TABLE users (
     zip INTEGER
 ),
 
+UPDATE products
+SET user_id=2
+-- Dont need the "WHERE" for SQL Tabs
+
+update products 
+set
+  name='Cat',
+  disc='COol',
+  price=5555,
+  image_url='https://secure.meetupstatic.com/photos/event/2/c/e/c/highres_482231500.jpeg'
+where products_id = 142;
+
+
 insert into products (
     name,
     disc,

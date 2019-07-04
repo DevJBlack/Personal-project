@@ -18,7 +18,7 @@ module.exports = {
                     console.log(err)
                     return res.status(500).send(err)
                 } else {
-                    console.log('Successful payment',charge)
+                    // console.log('Successful payment',charge)
                     //this is where you would do something with that purchase (i.e. store that information to your db)
                     return res.status(200).send(charge)
                 }

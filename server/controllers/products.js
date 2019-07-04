@@ -26,8 +26,10 @@ module.exports = {
     try {
         let db = req.app.get('db')
         const { name, disc, price, image_url } = req.body
+        const { admin_id } = req.session.user
 
         let products = await db.create_products({
+          admin_id,
           name, 
           disc, 
           price, 

@@ -65,7 +65,9 @@ module.exports = {
 
       delete user.password 
       req.session.user = user
+      console.log(req.session.user)
       res.send(req.session.user)
+
 
     } catch (error) {
       console.log('there was an error', error)
