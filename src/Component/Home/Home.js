@@ -56,7 +56,7 @@ const styles = {
 
   buttonOne: {
     padding: '15px',
-    width: '90vw',
+    width: '45vw',
     backgroundColor: 'white',
     fontWeight: 'bold',
     textTransform: 'uppercase',
@@ -67,7 +67,7 @@ const styles = {
 
   buttTwo: {
     padding: '12px',
-    width: '90vw',
+    width: '45vw',
     backgroundColor: 'transparent',
     fontWeight: 'bold',
     textTransform: 'uppercase',
