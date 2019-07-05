@@ -17,10 +17,10 @@ class Home extends Component {
         <div style={styles.img}>
           <Header />
         <div style={styles.centerWord} >
-          <h1 style={styles.model3}>Model 3</h1>
+          <h1 style={styles.model}>Model's</h1>
         </div>
         <div style={styles.centerWord}>
-           <Link to="/build"> <button style={styles.buttonOne}>Custom Order</button></Link>
+          
            <Link to="/shop"><button style={styles.buttTwo} > existing inventory </button></Link>
         </div>
         </div>
@@ -48,26 +48,15 @@ const styles = {
     marginTop: '27px'
   },
 
-  model3: {
+  model: {
     color: 'white',
     fontWeight: '500',
     fontSize: '40px'
   },
 
-  buttonOne: {
-    padding: '15px',
-    width: '45vw',
-    backgroundColor: 'white',
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
-    border: 'none',
-    borderRadius: '100px',
-    margin: '0 8px'
-  },
-
   buttTwo: {
     padding: '12px',
-    width: '45vw',
+    width: '95vw',
     backgroundColor: 'transparent',
     fontWeight: 'bold',
     textTransform: 'uppercase',

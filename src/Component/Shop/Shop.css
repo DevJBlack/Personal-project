@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::placeholder {
+  color: white;
+  text-align: center;
+}
+
+.input-boxes input {
+  border-radius: 100px;
+  background: none;
+  border: 2px solid black;
+  color: black;
+  text-align: center;
+  margin: 5px;
+}
+
+.input-boxes input::placeholder {
+  color: black;
+}
+
+.input-boxes button {
+  padding: 10px;
+  width: 45vw;
+  background: lightskyblue;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 100px;
+  color: white;
+}
+
+.input-boxes button:hover {
+  color: white;
+  background: black;
+  border-color: white;
+}

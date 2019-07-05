@@ -7,9 +7,14 @@ import { logout, getAdmin } from '../../redux/reducers/admin'
 
 function Sign(props){
   let { admin } = props
+
+
+
   useEffect(() => {
     props.getAdmin()
   },[props])
+
+
   return (
     <div style={styles.img}>
       <div >
@@ -20,6 +25,9 @@ function Sign(props){
         { admin ? 
         <div>
         <h1>Welcome {admin.name}! </h1> 
+        <Link to="/build"> <button style={styles.buttonOne}>Add To Inventory</button>
+        </Link>
+        <Link to="/shop"> <button> Update Shop </button> </Link>
         <button onClick={() => props.logout()}>Logout</button>
         </div> : <LoginForm></LoginForm>}
     </div>
@@ -53,5 +61,16 @@ const styles = {
   },
   teslaName: {
     height: '13px'
+  },
+
+  buttonOne: {
+    padding: '15px',
+    width: '45vw',
+    backgroundColor: 'white',
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    border: 'none',
+    borderRadius: '100px',
+    margin: '0 8px'
   }
 }

@@ -48,12 +48,13 @@ module.exports = {
     try {
         let db = req.app.get('db')
         const { id } = req.params
+        console.log(req.params)
 
         let products = await db.delete_product(id)
          res.send(products)
 
     } catch ( error ) {
-        console.log('error fetching posts:', error)
+        console.log('1111111111111111111111111111111111111111111111111111111111111111111111111111111  error fetching posts:', error)
         res.status(500).send(error) 
     }
   },

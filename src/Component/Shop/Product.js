@@ -49,11 +49,11 @@ function Product(props){
           description='By placing this order you agree to allow Tesla to save your credit card to pay for future servieces as described in the payment terms.' //subtitle - beneath header
           stripeKey={process.env.REACT_APP_STRIPE_KEY} //public key not secret key
           token={onToken} //fires the call back
-          amount={amount} //this will be in cents
+          amount={amount * 100} //this will be in cents
           currency="USD" 
           // image={imageUrl} // the pop-in header image (default none)
           // ComponentClass="div" //initial default button styling on block scope (defaults to span)
-          panelLabel={`Submit Payment $${amount}`} //text on the submit button
+          // panelLabel={`Submit Payment $${amount}`} //text on the submit button
           locale="en" //locale or language (e.g. en=english, fr=french, zh=chinese)
           // opened={this.onOpened} //fires cb when stripe is opened
           // closed={this.onClosed} //fires cb when stripe is closed
