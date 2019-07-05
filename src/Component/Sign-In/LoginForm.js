@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { login } from '../../redux/reducers/admin'
+import './LoginForm.css'
 
 function LoginForm(props){
   const [info, setInfo] = useState({
@@ -25,21 +26,31 @@ function LoginForm(props){
   // handleSubmit()
 
   return(
-    <div>
-      <input
-        name="email"
-        type="text"
-        placeholder="email"
-        onChange={handleChange}
-        />
-      <input
-        name="password"
-        type="password"
-        placeholder="password"
-        onChange={handleChange}
-        />
-        <button onClick={handleSubmit}>Login</button>
-
+    <div className="container">
+      <div className="box-forInput">
+      <div className="Sign-In" >
+        <p>Sign In</p>
+      </div>
+        <div>
+          <input
+            name="email"
+            type="text"
+            placeholder="email"
+            onChange={handleChange}
+            />
+        </div>
+        <div>
+          <input
+            name="password"
+            type="password"
+            placeholder="password"
+            onChange={handleChange}
+            />
+        </div> 
+        <div className="button-input">
+          <button onClick={handleSubmit}>sign in</button>
+        </div>
+      </div> 
     </div>
   )
 }

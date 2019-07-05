@@ -18,7 +18,9 @@
   line-height: 20px;
 }
 
-
+.label { 
+  display: none;
+}
 
 #toggle {
   display: none;

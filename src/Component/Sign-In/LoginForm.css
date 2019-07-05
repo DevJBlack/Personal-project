@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.box-forInput input::placeholder {
+  color: #363636;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 25%;
+}
+
+.box-forInput {
+  height: 250px;
+  width: 95vw; 
+  background-color: #eee;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 40px 40px 40px;
+}
+
+.box-forInput input {
+  height: 40px;
+  width: 75vw;
+  border-radius: 100px;
+  font-size: 16px;
+  margin: 5px 0px;
+  border: 1px #ccc solid;
+  color: #363636;
+  font-weight: 100; 
+}
+
+.box-forInput button {
+  height: 40px;
+  width: 75vw;
+  border-radius: 100px;
+  text-align: center;
+  background-color: rgb(62, 107, 226);
+  color: white;
+  font-weight: 500;
+  border: none;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.button-input {
+  margin-top: 15px;
+}
+
+.Sign-In {
+  width: 75vw;
+  font-size: 30px;
+  color: gray;
+  border-bottom: 1px solid #ccc;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+
+@media screen and ( min-width: 768px ){
+  .container {
+    margin-top: 10%;
+  }
+
+  .box-forInput {
+    height: 350px;
+    width: 35vw; 
+  }
+
+  .box-forInput input {
+    height: 40px;
+    width: 30vw;
+  }
+
+  .box-forInput button {
+    height: 40px;
+    width: 30vw;
+  }
+
+  .Sign-In {
+    width: 30vw;
+    font-size: 30px;
+  }
+}

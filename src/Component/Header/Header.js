@@ -22,7 +22,7 @@ function Header () {
               <Link to="/shop"><p>Shop</p></Link>
               <Link to="/signin"><p>Sign-in</p></Link>
             </div>
-            <label htmlFor="toggle" style={styles.label}>&#9776;</label>
+            <label htmlFor="toggle" className="label">&#9776;</label>
           </div>
       </nav>
     </div>
@@ -46,9 +46,10 @@ const styles = {
     height: '13px'
   },
   label: {
-    color: 'white',
-    fontSize: '18px',
-    display: 'block'
+    // color: 'white',
+    // fontSize: '18px',
+    // display: 'block'
+    // display: 'hidden'
   },
   hamburger: {
     display: 'flex'
