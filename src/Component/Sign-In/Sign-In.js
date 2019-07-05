@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import LoginForm from './LoginForm'
 import { logout, getAdmin } from '../../redux/reducers/admin'
+import './Sign-In.css'
 
 
 function Sign(props){
@@ -23,13 +24,18 @@ function Sign(props){
         </nav>
       </div>
         { admin ? 
-        <div>
-        <h1>Welcome {admin.name}! </h1> 
-        <Link to="/build"> <button style={styles.buttonOne}>Add To Inventory</button>
-        </Link>
-        <Link to="/shop"> <button> Update Shop </button> </Link>
-        <button onClick={() => props.logout()}>Logout</button>
-        </div> : <LoginForm></LoginForm>}
+        <div className="container">
+          <div className="box">
+            <div className="admin" >
+              <h1>Welcome {admin.name}! </h1> 
+            </div>
+              <Link to="/build"> <button className="button" >Add To Inventory</button>
+              </Link>
+              <Link to="/shop"> <button className="button" > Update Shop </button> </Link>
+              <button className="logout" onClick={() => props.logout()}>Logout</button>
+          </div> 
+        </div> : <LoginForm></LoginForm>
+      }
     </div>
   )
 }
@@ -61,16 +67,6 @@ const styles = {
   },
   teslaName: {
     height: '13px'
-  },
-
-  buttonOne: {
-    padding: '15px',
-    width: '45vw',
-    backgroundColor: 'white',
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
-    border: 'none',
-    borderRadius: '100px',
-    margin: '0 8px'
   }
+
 }

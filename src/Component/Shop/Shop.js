@@ -135,7 +135,7 @@ function Shop(props){
                     null
                   }
                 <div>
-                  <button onClick={() => viewProduct(product)} >View Product</button>
+                  <button className="viewProduct" onClick={() => viewProduct(product)} >View Product</button>
                 </div>
               </div>
           </div>

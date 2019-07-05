@@ -31,10 +31,23 @@
   border: none;
   border-radius: 100px;
   color: white;
+  margin: 5px;
 }
 
 .input-boxes button:hover {
   color: white;
   background: black;
   border-color: white;
+}
+
+.viewProduct {
+  padding: 10px;
+  width: 45vw;
+  background: lightskyblue;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 100px;
+  color: white;
+  margin: 2.5px;
 }
