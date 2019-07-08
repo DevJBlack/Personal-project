@@ -21,7 +21,7 @@ class Home extends Component {
         </div>
         <div style={styles.centerWord}>
           
-           <Link to="/shop"><button style={styles.buttTwo} > existing inventory </button></Link>
+           <Link to="/shop"><button style={styles.buttTwo} > inventory </button></Link>
         </div>
         </div>
       </div>
@@ -38,7 +38,7 @@ const styles = {
     backgroundRepeat: 'no-repeat',
     /* background-attachment: fixed; */
     backgroundSize: 'cover',
-    backgroundPosition: 'top'
+    backgroundPosition: 'right 50% bottom 25%'
   },
   centerWord: {
     display: 'flex',
@@ -56,7 +56,7 @@ const styles = {
 
   buttTwo: {
     padding: '12px',
-    width: '95vw',
+    width: '350px',
     backgroundColor: 'transparent',
     fontWeight: 'bold',
     textTransform: 'uppercase',
