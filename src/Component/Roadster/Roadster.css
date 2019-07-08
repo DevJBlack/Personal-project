@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.teslaBoxRoadster {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.teslaRoadster {
+  color: black;
+  font-size: 23px;
+}
+
+.modelRoadster {
+  color: black;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.statesBoxRoadster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90%;
+}
+
+.speedRoadster {
+  color: white;
+  font-size: 27px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.speedRoadster span {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.topRoadster {
+  color: white;
+  font-size: 27px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.topRoadster span {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.rangeRoadster {
+  color: white;
+  font-size: 27px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+
+.rangeRoadster span {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.buttonBoxRoadster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.modelRShop {
+  font-size: 12px;
+  color: white;
+  font-weight: bolder;
+  padding: 15px;
+  width: 330px;
+  background-color: transparent;
+  border-radius: 100px;
+  text-transform: uppercase;
+  border: 2px solid white;
+}
+
+.videoBoxRoadster {
+  padding: 50px 17px;
+  background-color: black;
+}
+
+.specsRoadster {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.roadsterList li {
+  color: white;
+  list-style: none;
+  font-size: 12px;
+  margin: 20px 0;
+    width: 75vw;
+    border-bottom: 1px solid white;
+    letter-spacing: 1px;
+}
+
+.roadsterList span {
+  float: right;
+}
+
+@media screen and ( min-width: 768px ) {
+  .statesBoxRoadster { 
+    margin-top: 30%;
+  }
+  .speedRoadster {
+    color: white;
+  }
+  
+  .spaceRoadster {
+    color: white;
+  }
+  
+  .rangeRoadster {
+    color: white;
+  }
+
+  .modelRShop {
+    background-color: white;
+    border: 2px solid white;
+  }
+  
+}

@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.teslaBoxModelX {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.teslaModelX {
+  color: white;
+  font-size: 23px;
+}
+
+.modelModelX {
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.statesBoxModelX {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90%;
+}
+
+.saftyModelX {
+  color: white;
+  font-size: 27px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.saftyModelX span {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.spaceModelX {
+  color: white;
+  font-size: 27px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.spaceModelX span {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.rangeModelX {
+  color: white;
+  font-size: 27px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+
+.rangeModelX span {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.buttonBoxModelX {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.modelXShop {
+  font-size: 12px;
+  color: white;
+  font-weight: bolder;
+  padding: 15px;
+  width: 330px;
+  background-color: transparent;
+  border-radius: 100px;
+  text-transform: uppercase;
+  border: 2px solid white;
+}
+
+.videoBoxModelX {
+  padding: 50px 17px;
+}
+
+.videoRangeModelX {
+  color: rgb(189, 186, 186);
+  font-size: 20px
+}
+
+.goAnywhereModelX {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.carTextModelX {
+  color: rgb(114, 114, 114);
+  letter-spacing: 1px;
+}
+
+@media screen and ( min-width: 768px ) {
+  .statesBoxModelX { 
+    margin-top: 30%;
+  }
+
+  .modelXShop {
+    border: 4px solid white;
+  }
+  
+}

@@ -1,12 +1,33 @@
 import React from 'react'
 import Header from '../Header/Header'
+import { Link } from 'react-router-dom'
+import './Model-3.css'
 
 function Model3 () {
   return (
     <div>
         <div style={ styles.img }>
-          <Header />
-
+          <Header />          
+            <div className="teslaBoxModel3">
+              <div className="teslaModel3"> Tesla </div>
+              <div className="modelCar"> Model 3 </div>
+            </div> 
+            <div className="statesBoxModel3">
+              <div className="speedModel3">3.2s <span> from 0-60 mph</span></div>
+              <div className="spaceModel3">310mi<span>Range</span></div>
+              <div className="rangeModel3">AWD<span>Dual Motor</span></div>
+            </div>
+            <div className="buttonBoxModel3">
+              <Link to="/shop"><button className="model3Shop">order now</button></Link>
+            </div>
+          </div>
+          <div>
+          <iframe title="Model3" width="100%" height="395" src="https://www.youtube.com/embed/NP0MS4fLN1c" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+            <div className="videoBoxModel3" >
+              <span className="videoRangeModel3">Performance</span>
+              <p className="goAnywhereModel3">Quickest Acceleration</p>
+              <p className="carTextModel3">Model 3 comes with the option of dual motor all-wheel drive, 20" Performance Wheels and Brakes and lowered suspension fo total control, in all weather conditions. And a carbon fiber spoiler improves stability at high speeds, all allowing Model 3 to accelerate from 0-60 mph in as little as 3.2 seconds.</p>
+            </div>
         </div>
     </div>
   )
@@ -19,7 +40,6 @@ const styles = {
     height: '100vh',
     backgroundImage: 'url(https://www.tesla.com/content/dam/tesla-site/sx-redesign/img/model3-proto/hero/model-3.jpg)',
     backgroundRepeat: 'no-repeat',
-    /* background-attachment: fixed; */
     backgroundSize: 'cover',
     backgroundPosition: 'center'
   }
