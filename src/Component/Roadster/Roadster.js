@@ -21,8 +21,8 @@ function Roadster(){
           <Link to="/shop"><button className="modelRShop">order now</button></Link>
         </div>
       </div>
-      <div>
-      <iframe title="roadster" width="100%" height="395" src="https://www.youtube.com/embed/tw4jkyfY4HE" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      <div className="videoForRoadster">
+      <iframe title="roadster" className="roadsterVideo" width="100%" height="395" src="https://www.youtube.com/embed/tw4jkyfY4HE" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
         <div className="videoBoxRoadster" >
           <span className="specsRoadster">Base Specs</span>
           <div className="roadsterList">
