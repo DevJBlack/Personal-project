@@ -9,9 +9,18 @@ body {
   width: 100%;
 }
 
+.imageCar {
+  width: 100%;
+}
+
 ::placeholder {
   color: white;
   text-align: center;
+}
+
+.navigation span {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .input-boxes input {
@@ -21,6 +30,7 @@ body {
   color: black;
   text-align: center;
   margin: 5px;
+  width: 175px;
 }
 
 .input-boxes input::placeholder {
@@ -29,7 +39,7 @@ body {
 
 .input-boxes button {
   padding: 10px;
-  width: 45vw;
+  width: 175px;;
   background: lightskyblue;
   font-weight: bold;
   text-transform: uppercase;
@@ -47,7 +57,7 @@ body {
 
 .viewProduct {
   padding: 10px;
-  width: 45vw;
+  width: 175px;
   background: lightskyblue;
   font-weight: bold;
   text-transform: uppercase;

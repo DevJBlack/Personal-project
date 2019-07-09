@@ -16,7 +16,7 @@ function Shop(props){
     price: 0,
     image_url: ''
   })
-
+const [isEditing, setIsEditing] = useState(false)
  
   
   useEffect(() => {
@@ -60,6 +60,7 @@ function Shop(props){
         price: 0,
         image_url: ''
       })
+      setIsEditing(false)
     })
   }
 
@@ -93,16 +94,19 @@ function Shop(props){
         // console.log(product.products_id)
         return(
           <div key={product.products_id} style={styles.productDiv} >
-            <nav>
-              <li><img width="300px" src={product.image_url} alt=""/></li>
-              <li>Name: {product.name}</li>
-              <li>Description: {product.disc}</li>
-              <li>Price: {product.price}</li>
+            <nav className="navigation">
+              <li><img className="imageCar" src={product.image_url} alt=""/></li>
+              <li><span>Name:</span> {product.name}</li>
+              <li><span>Description:</span> {product.disc}</li>
+              <li><span>Price:</span> {product.price}</li>
             </nav>
               <div>
+                <div>
+                      <button className="viewProduct" onClick={() => viewProduct(product)} >View Product</button>
+                </div>
             
-                { admin ?
-
+                { admin &&
+                isEditing ? 
                   <div className="input-boxes">
                     <input
                       name="name"
@@ -129,14 +133,13 @@ function Shop(props){
                       onChange={handleUpdate}
                       />
                     <button onClick={()=> updateProduct(product.products_id, edit)}>Update Confirm</button>
-                    <button onClick={() => deleteProduct(product.products_id)}>Delete</button>               
+                    <button onClick={() => deleteProduct(product.products_id)}>Delete</button>   
+                    <button onClick={() => setIsEditing(false)}>Cancel</button>            
                   </div> 
-                    :
-                    null
+                  :
+                  <button onClick={() => setIsEditing(true)}>Edit</button>
                   }
-                <div>
-                  <button className="viewProduct" onClick={() => viewProduct(product)} >View Product</button>
-                </div>
+              
               </div>
           </div>
          )

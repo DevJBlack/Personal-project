@@ -16,11 +16,12 @@ function Header () {
             <Link to="/modely" ><p>Model Y</p></Link>
             <Link to="/roadster" ><p>Roadster</p></Link>
             <Link to="/energy" ><p>Energy</p></Link>
+            <Link to="/signin" id="signInDisplay"><p>Sign-in</p></Link>
           </div>
           <div style={styles.farRightWords}>
-            <div className="menu">
-              <Link to="/shop"><p>Shop</p></Link>
+            <div className="menu" >
               <Link to="/signin"><p>Sign-in</p></Link>
+              <Link to="/shop"><p>Shop</p></Link>
             </div>
             <label htmlFor="toggle" className="label">&#9776;</label>
           </div>
