@@ -11,9 +11,7 @@ body {
 
 
 .buildYour input {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+  color: yellow;
   width: 100%;
   height: 25px;
   flex-wrap: wrap;
@@ -37,8 +35,9 @@ body {
   border: none;
 }
 
-::placeholder {
+.buildYour input::placeholder {
   color: yellow;
+  text-align: center;
 }
 
 

@@ -13,7 +13,7 @@ body {
   width: 100%;
 }
 
-::placeholder {
+.inputShopHeader::placeholder {
   color: white;
   text-align: center;
 }
