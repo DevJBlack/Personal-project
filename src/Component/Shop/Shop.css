@@ -23,6 +23,7 @@ body {
   font-weight: bold;
 }
 
+
 .input-boxes input {
   border-radius: 100px;
   background: none;
@@ -47,6 +48,7 @@ body {
   border-radius: 100px;
   color: white;
   margin: 5px;
+  float: left;
 }
 
 .input-boxes button:hover {
@@ -65,4 +67,35 @@ body {
   border-radius: 100px;
   color: white;
   margin: 2.5px;
+}
+
+
+.buttonCenter {
+  display: flex;
+  justify-content: center;
+  float: right;
+}
+
+@media screen and ( min-width: 768px ){
+  .imageCar {
+    width: 50%;
+    float: left;
+    text-align: center;
+    margin-right: 25px;
+  }
+
+  .input-boxes input {
+    width: 125px;
+    clear: left;
+  }
+  
+  .input-boxes button {
+    width: 140px;
+    overflow: hidden;
+  }
+
+  .viewProduct {
+    width: 125px;
+  }
+
 }

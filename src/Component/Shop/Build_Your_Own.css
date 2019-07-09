@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+
+.buildYour input {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  width: 100%;
+  height: 25px;
+  flex-wrap: wrap;
+  margin: 15px 0;
+  border-radius: 100px;
+  background-color: transparent;
+  border: 2px crimson solid;
+}
+
+.buildBut {
+  display: flex;
+  justify-content: center;
+}
+
+.butBuild {
+  width: 150px;
+  height:25px;
+  border-radius: 100px;
+  background-color: crimson;
+  color: yellow;
+  border: none;
+}
+
+::placeholder {
+  color: yellow;
+}
+
+
+@media screen and ( min-width: 768px ){
+  .buildYour input {
+    width: 50%;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .butBuild {
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+  }
+}

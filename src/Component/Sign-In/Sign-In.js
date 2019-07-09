@@ -27,7 +27,7 @@ function Sign(props){
         <div className="container">
           <div className="box">
             <div className="admin" >
-              <h1>Welcome {admin.name}! </h1> 
+              <h1 style={styles.hOneWord}>Welcome {admin.name}! </h1> 
             </div>
               <Link to="/build"> <button className="button" >Add To Inventory</button>
               </Link>
@@ -67,6 +67,9 @@ const styles = {
   },
   teslaName: {
     height: '13px'
-  }
+  },
 
+  hOneWord: {
+    color: 'black'
+  }
 }

@@ -95,17 +95,14 @@ const [isEditing, setIsEditing] = useState(false)
         return(
           <div key={product.products_id} style={styles.productDiv} >
             <nav className="navigation">
-              <li><img className="imageCar" src={product.image_url} alt=""/></li>
+              <img className="imageCar" src={product.image_url} alt=""/>
               <li><span>Name:</span> {product.name}</li>
               <li><span>Description:</span> {product.disc}</li>
               <li><span>Price:</span> {product.price}</li>
-            </nav>
+           
               <div>
-                <div>
-                      <button className="viewProduct" onClick={() => viewProduct(product)} >View Product</button>
-                </div>
-            
-                { admin &&
+              
+                { admin ?
                 isEditing ? 
                   <div className="input-boxes">
                     <input
@@ -132,15 +129,26 @@ const [isEditing, setIsEditing] = useState(false)
                       placeholder="image_url"
                       onChange={handleUpdate}
                       />
+                  <div>
                     <button onClick={()=> updateProduct(product.products_id, edit)}>Update Confirm</button>
+                  </div>
+                  <div>
                     <button onClick={() => deleteProduct(product.products_id)}>Delete</button>   
-                    <button onClick={() => setIsEditing(false)}>Cancel</button>            
+                  </div>
+                  <div>
+                    <button onClick={() => setIsEditing(false)}>Cancel</button>
+                  </div>
                   </div> 
                   :
-                  <button onClick={() => setIsEditing(true)}>Edit</button>
+                  <button style={styles.editButton} onClick={() => setIsEditing(true)}>Edit</button>
+                  :
+                  null
                   }
-              
+                 <div className="buttonCenter">
+                      <button className="viewProduct" onClick={() => viewProduct(product)} >View Product</button>
+                </div>
               </div>
+              </nav>
           </div>
          )
         })}
@@ -166,11 +174,11 @@ const styles = {
     width: '100%',
     color: 'transparent',
     padding: '35px',
-    backgroundColor: 'black'
+    backgroundColor: 'black',
   },
   imgLogo: {
     height: '35px',
-    color: 'black'
+    color: 'black',
   },
   imgWord: {
     height: '35px',
@@ -200,5 +208,16 @@ const styles = {
   },
   adminWord: {
     textAlign: 'center'
+  },
+  editButton: {
+    padding: '10px',
+    width: '175px',
+    background: 'lightskyblue',
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    border: 'none',
+    borderRadius: '100px',
+    color: 'white',
+    margin: '5px'
   }
 }
