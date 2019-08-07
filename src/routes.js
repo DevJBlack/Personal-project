@@ -11,6 +11,7 @@ import Signin from './Component/Sign-In/Sign-In'
 import Shop from './Component/Shop/Shop'
 import BuildYourOwn from './Component/Shop/Build_Your_Own'
 import Product from './Component/Shop/Product'
+import Register from './Component/Register/Register'
 
 export default (
   <Switch>
@@ -25,5 +26,6 @@ export default (
     <Route path="/shop" component={Shop} />
     <Route path="/build" component={BuildYourOwn}/>
     <Route path="/product/:id" component={Product}/>
+    <Route path="/register" component={Register}/>
   </Switch>
 )

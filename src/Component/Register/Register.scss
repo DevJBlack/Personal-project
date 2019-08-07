@@ -7,8 +7,20 @@
 }
 
 body {
-  height: 100%;
+  height: 100vh;
   width: 100%;
+}
+
+
+.regScreen {
+  height: 100vh;
+  background-image: url('https://auth.tesla.com/images/roadster-dontpanic.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .box-forInput input::placeholder {
@@ -16,15 +28,15 @@ body {
   text-align: center;
 }
 
-.container {
+.containerReg {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 25%;
+  margin-bottom: 36%;
 }
 
-.box-forInput {
+.boxForInputReg {
   height: 275px;
   width: 95vw; 
   background-color: #eee;
@@ -36,7 +48,7 @@ body {
   padding: 10px 40px 40px 40px;
 }
 
-.box-forInput input {
+.boxForInputReg input {
   height: 40px;
   width: 75vw;
   border-radius: 100px;
@@ -48,7 +60,7 @@ body {
   text-align: center;
 }
 
-.box-forInput .firstButton {
+.boxForInputReg button{
   height: 40px;
   width: 75vw;
   border-radius: 100px;
@@ -61,25 +73,24 @@ body {
   text-transform: uppercase;
 }
 
-.forSecondButton {
+.buttonAccount a {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 25px;
+  text-decoration: none;
 }
 
-.secondButton {
+.accountButton  {
   border: none;
   color: blue;
   font-size: 13px;
-  background: transparent;
 }
 
-.button-input {
+.buttonInputREg {
   margin-top: 15px;
 }
 
-.Sign-In {
+.register {
   width: 75vw;
   font-size: 30px;
   color: gray;
@@ -91,36 +102,33 @@ body {
 
 @media screen and ( min-width: 768px ){
 
-  .Sign-In {
+  .register {
     margin-top: 20px;
+    width: 30vw;
+    font-size: 30px;
   }
 
-  .container {
-    margin-top: 10%;
+  .containerReg {
+    margin-bottom: 1%;
   }
 
-  .box-forInput {
+  .boxForInputReg {
     height: 325px;
     width: 35vw; 
   }
 
-  .box-forInput input {
+  .boxForInputReg input {
     height: 40px;
     width: 30vw;
   }
 
-  .box-forInput .firstButton {
+  .boxForInputReg .firstButton {
     height: 40px;
     width: 30vw;
   }
 
-  .box-forInput button {
+  .boxForInputReg button {
     height: 40px;
     width: 30vw;
-  }
-
-  .Sign-In {
-    width: 30vw;
-    font-size: 30px;
   }
 }

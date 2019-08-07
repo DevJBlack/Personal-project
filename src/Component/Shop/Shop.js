@@ -7,7 +7,7 @@ import axios from 'axios';
 import './Shop.css'
 
 function Shop(props){
-  let { admin } = props
+  let { admin, getAdmin } = props
   const [products, setProducts] = useState([])
   const [search, setSearch] = useState('')
   const [edit, setEdit] = useState({
@@ -26,13 +26,11 @@ const [isEditing, setIsEditing] = useState(false)
   },[])
 
     useEffect(() => {
-      props.getAdmin()
-    }, [props])
+      getAdmin()
+    }, [getAdmin])
   
 
   function deleteProduct(id){
-    console.log(id)
-    console.log(products)
     axios.delete(`/api/products/${id}`).then(res => {
       setProducts(res.data)
     })
@@ -51,7 +49,6 @@ const [isEditing, setIsEditing] = useState(false)
   }
 
   function updateProduct(id, edit){
-    // console.log(id, edit)
     axios.put(`/api/products/${id}`, { edit }).then(res => {
       setProducts(res.data)
       setEdit({
@@ -92,7 +89,6 @@ const [isEditing, setIsEditing] = useState(false)
       return (
         obj.name.includes(search) 
       )}).map((product) => {
-        // console.log(product.products_id)
         return(
           <div key={product.products_id} style={styles.productDiv} >
             <nav className="navigation">

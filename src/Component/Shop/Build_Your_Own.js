@@ -28,8 +28,6 @@ function BuildYourOwn(props){
 
   
    function buildCar(){
-    // console.log(create)
-    // console.log(setCreate)
         axios.post('/api/products', create).then(res => {
         setCreate(res.data)
         props.history.push('/shop')

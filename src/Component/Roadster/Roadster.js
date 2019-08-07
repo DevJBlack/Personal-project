@@ -1,24 +1,42 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../Header/Header'
-import { Link } from 'react-router-dom'
 import './Roadster.css'
+import axios from 'axios';
 
-function Roadster(){
+function Roadster(props){
+const [products, setProducts] = useState([])
+
+
+
+useEffect(() => {
+  axios.get('/api/product').then(res => {
+    setProducts(res.data)
+    console.log(res.data)
+  })
+  console.log(products)
+}, [])
+  
+function viewProduct(){
+  props.history.push(`/product`)
+}
+
   return(
     <div>
       <div style={styles.img}>
         <Header />
-        <div className="teslaBoxRoadster">
-          <div className="teslaRoadster"> Tesla </div>
-          <div className="modelRoadster"> Roadster </div>
-         </div> 
-        <div className="statesBoxRoadster">
-          <div className="speedRoadster">1.9s <span> from 0-60 mph</span></div>
-          <div className="topRoadster">250mph <span>Top Speed</span></div>
-          <div className="rangeRoadster">620 mi <span>Range</span></div>
-        </div>
-        <div className="buttonBox">
-          <Link to="/shop"><button className="modelRShop">order now</button></Link>
+        <div>
+          <div className="teslaBoxRoadster">
+            <div className="teslaRoadster"> Tesla </div>
+            <div className="modelRoadster"> Roadster </div>
+          </div> 
+          <div className="statesBoxRoadster">
+            <div className="speedRoadster">1.9s <span> from 0-60 mph</span></div>
+            <div className="topRoadster">250mph <span>Top Speed</span></div>
+            <div className="rangeRoadster">620 mi <span>Range</span></div>
+          </div>
+          <div className="buttonBox">
+            <button onClick={() => viewProduct()}  className="modelRShop">order now</button>
+          </div>            
         </div>
       </div>
       <div className="videoForRoadster">
@@ -49,7 +67,6 @@ const styles = {
     height: '100vh',
     backgroundImage: 'url(https://www.tesla.com/tesla_theme/assets/img/_vehicle_redesign/roadster_and_semi/roadster/hero-portrait@2.jpg)',
     backgroundRepeat: 'no-repeat',
-    /* background-attachment: fixed; */
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     color: 'black'

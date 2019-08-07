@@ -2,6 +2,7 @@ const express = require('express')
 const massive = require('massive')
 const session = require('express-session')
 require('dotenv/config')
+const path = require('path');
 
 const AuthCtrl = require('./controllers/auth')
 const ProductCtrl = require('./controllers/products')
@@ -26,6 +27,7 @@ app.use(session({
     maxAge: 1000 * 60 * 60 * 24 * 365
   }
 }))
+app.use( express.static(`${__dirname}/../build`))
 
 app.post('/auth/register', AuthCtrl.register)
 app.post('/auth/login', AuthCtrl.login)
@@ -39,3 +41,7 @@ app.delete('/api/products/:id', ProductCtrl.deleteProduct)
 app.put('/api/products/:id', ProductCtrl.updateProduct)
 
 app.post('/api/payment', stripeCtrl.pay)
+
+app.get('*',(req,res) => {
+  res.sendFile(path.join(__dirname, '../build/index.html'))
+})

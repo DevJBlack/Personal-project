@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { login } from '../../redux/reducers/admin'
+import { Link } from 'react-router-dom'
 import './LoginForm.css'
 
 function LoginForm(props){
@@ -23,7 +24,8 @@ function LoginForm(props){
     let { email, password } = info
     props.login({ email, password })
   }
-  // handleSubmit()
+
+  
 
   return(
     <div className="container">
@@ -31,6 +33,7 @@ function LoginForm(props){
       <div className="Sign-In" >
         <p>Sign In</p>
       </div>
+      <form>
         <div>
           <input
             name="email"
@@ -48,8 +51,13 @@ function LoginForm(props){
             />
         </div> 
         <div className="button-input">
-          <button onClick={handleSubmit}>sign in</button>
+          <button type='submit' className="firstButton" onClick={handleSubmit}>sign in</button>
+          <div className="forSecondButton">
+
+        <Link to="/register" ><button className="secondButton">New Account</button> </Link>
+          </div>
         </div>
+      </form>
       </div> 
     </div>
   )

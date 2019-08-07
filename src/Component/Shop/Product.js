@@ -15,19 +15,15 @@ function Product(props){
   useEffect(() => {
     axios.get(`/api/product/${id}`).then(res => {
       setProduct(res.data)
-      // console.log(res.data)
       setAmount(res.data.price)
     })
   }, [id])
 
 
   async function onToken(token){
-    // console.log(token)
     await setAmount(amount)
-    // console.log(amount)
     token.card = void 0
     axios.post('/api/payment', { token, amount }).then(res => {
-      // console.log(res)
       alert(`Congratulations on buying your new ${product.name}!`)
       props.history.push('/')
     })

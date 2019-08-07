@@ -7,13 +7,13 @@ import './Sign-In.css'
 
 
 function Sign(props){
-  let { admin } = props
+  let { admin, getAdmin } = props
 
 
 
   useEffect(() => {
-    props.getAdmin()
-  },[props])
+    getAdmin()
+  },[getAdmin])
 
 
   return (
@@ -34,7 +34,11 @@ function Sign(props){
               <Link to="/shop"> <button className="button" > Update Shop </button> </Link>
               <button className="logout" onClick={() => props.logout()}>Logout</button>
           </div> 
-        </div> : <LoginForm></LoginForm>
+        </div> 
+        :
+        <div>
+          <LoginForm></LoginForm>
+        </div>
       }
     </div>
   )
@@ -52,7 +56,6 @@ const styles = {
     height: '100vh',
     backgroundImage: 'url(https://auth.tesla.com/images/login-semi-interior.jpg)',
     backgroundRepeat: 'no-repeat',
-    /* background-attachment: fixed; */
     backgroundSize: 'cover',
     backgroundPosition: 'center'
   },
