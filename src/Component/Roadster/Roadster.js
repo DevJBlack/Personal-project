@@ -1,41 +1,43 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../Header/Header'
 import './Roadster.css'
+import { connect } from 'react-redux'
+import { getProduct } from '../../redux/reducers/products'
 import axios from 'axios';
 
 function Roadster(props){
-const [products, setProducts] = useState([])
-
+const [product, setProduct] = useState({})
+const [number] = useState(5)
 
 
 useEffect(() => {
-  axios.get('/api/product').then(res => {
-    setProducts(res.data)
-    console.log(res.data)
+  axios.get(`/api/products`).then(res => {
+    setProduct(res.data)
   })
-  console.log(products)
 }, [])
-  
-function viewProduct(){
-  props.history.push(`/product`)
-}
 
-  return(
-    <div>
+
+
+function viewProduct(product){
+  props.history.push(`/product/${product.products_id}`)
+}
+console.log(product[number]) 
+return(
+  <div>
       <div style={styles.img}>
         <Header />
         <div>
           <div className="teslaBoxRoadster">
-            <div className="teslaRoadster"> Tesla </div>
+            <div className="teslaRoadster"> Tesla  </div>
             <div className="modelRoadster"> Roadster </div>
           </div> 
           <div className="statesBoxRoadster">
             <div className="speedRoadster">1.9s <span> from 0-60 mph</span></div>
             <div className="topRoadster">250mph <span>Top Speed</span></div>
-            <div className="rangeRoadster">620 mi <span>Range</span></div>
+            <div className="rangeRoadster">620 mi <span>Range</span></div>  
           </div>
           <div className="buttonBox">
-            <button onClick={() => viewProduct()}  className="modelRShop">order now</button>
+                  <button onClick={() => viewProduct(product[number])}  className="modelRShop">order now</button>
           </div>            
         </div>
       </div>
@@ -60,7 +62,16 @@ function viewProduct(){
   )
 }
 
-export default Roadster
+let mapDispatchToProps = {
+  getProduct
+}
+
+let mapStateToProps = reduxState => {
+  let { data : product } = reduxState.products
+  return { product }
+}
+
+export default connect(mapStateToProps, (mapDispatchToProps) )(Roadster)
 
 const styles = {
   img: {

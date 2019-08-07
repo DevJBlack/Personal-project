@@ -11,7 +11,6 @@ function Product(props){
 
   let { id } = props.match.params
  
-
   useEffect(() => {
     axios.get(`/api/product/${id}`).then(res => {
       setProduct(res.data)
@@ -28,6 +27,7 @@ function Product(props){
       props.history.push('/')
     })
   }
+
 
   return(
     <div>

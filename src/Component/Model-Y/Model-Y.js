@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
 import Header from '../Header/Header'
 import './Model-Y.css'
-import { Link } from 'react-router-dom'
+import axios from 'axios'
 
-function ModelY(){
+function ModelY(props){
+  const [product, setProduct] = useState({})
+const [number] = useState(1)
+
+
+useEffect(() => {
+  axios.get(`/api/products`).then(res => {
+    setProduct(res.data)
+  })
+}, [])
+
+
+
+function viewProduct(product){
+  props.history.push(`/product/${product.products_id}`)
+}
+console.log(product[number]) 
+console.log(product)
   return(
     <div>
       <div style={styles.img}>
@@ -18,7 +35,7 @@ function ModelY(){
             <div className="driveModelY">AWD <span>Dual Motor </span></div>
           </div>
           <div className="buttonBoxModelY">
-            <Link to="/shop"><button className="ModelYShop">order now</button></Link>
+            <button onClick={() => viewProduct(product[number])} className="ModelYShop">order now</button>
           </div>
         </div>
         <div>
