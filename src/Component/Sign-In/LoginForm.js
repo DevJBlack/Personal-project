@@ -20,7 +20,8 @@ function LoginForm(props){
   
  
 
-  function handleSubmit(){
+  function handleSubmit(e){
+    e.preventDefault()
     let { email, password } = info
     props.login({ email, password })
   }
