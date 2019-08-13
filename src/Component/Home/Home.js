@@ -1,17 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './Home.css'
 import Header from '../Header/Header'
 import { Link } from 'react-router-dom'
 
-class Home extends Component {
-  constructor(){
-    super()
-    this.state = {
+const Home = () => {
+  
 
-    }
-  }
-
-  render(){
     return(
       <div className="home-first-pic">
         <div style={styles.img}>
@@ -27,7 +21,6 @@ class Home extends Component {
       </div>
     )
   }
-}
 
 export default Home
 
