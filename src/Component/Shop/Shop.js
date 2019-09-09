@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getAdmin } from '../../redux/reducers/admin'
 import { getProducts, deleteProduct, updateProduct } from '../../redux/reducers/products'
+import UpdateShop from '../UpdateShop/UpdateShop'
 import axios from 'axios';
 import './Shop.css'
 
@@ -40,13 +41,6 @@ const [isEditing, setIsEditing] = useState(false)
     setSearch( e.target.value)
   }
 
-  function handleUpdate(e){
-    const {name, value} = e.target
-    setEdit({
-      ...edit,
-      [name]: value
-    })
-  }
 
   function updateProduct(id, edit){
     axios.put(`/api/products/${id}`, { edit }).then(res => {
@@ -85,14 +79,14 @@ const [isEditing, setIsEditing] = useState(false)
           { admin ? <h1> Welcome {admin.name}</h1> : null }         
         </div>
       </div>
-      { products.filter((obj) => {
+      { products.filter((product) => {
       return (
-        obj.name.includes(search) 
+        product.name.includes(search) 
       )}).map((product) => {
         return(
           <div key={product.products_id} style={styles.productDiv} >
             <nav className="navigation">
-              <img className="imageCar" src={product.image_url} alt=""/>
+              <img className="imageCar" src={product.image_url} alt="Tesla Car"/>
               <li><span>Name:</span> {product.name}</li>
               <li><span>Description:</span> {product.disc}</li>
               <li><span>Price:</span> {product.price}</li>
@@ -102,36 +96,12 @@ const [isEditing, setIsEditing] = useState(false)
                 { admin ?
                 isEditing ? 
                   <div className="input-boxes">
-                    <input
-                      name="name"
-                      type="text"
-                      placeholder="name"
-                      onChange={handleUpdate}
-                      />
-                    <input
-                      name="disc"
-                      type="text"
-                      placeholder="disc"
-                      onChange={handleUpdate}
-                      />
-                    <input
-                      name="price"
-                      type="number"
-                      placeholder="price"
-                      onChange={handleUpdate}
-                      />
-                    <input
-                      name="image_url"
-                      type="text"
-                      placeholder="image_url"
-                      onChange={handleUpdate}
-                      />
-                  <div>
-                    <button onClick={()=> updateProduct(product.products_id, edit)}>Update Confirm</button>
-                  </div>
-                  <div>
-                    <button onClick={() => deleteProduct(product.products_id)}>Delete</button>   
-                  </div>
+                    <UpdateShop 
+                      product={product.products_id}
+                      updateProduct={updateProduct}
+                      deleteProduct={deleteProduct}
+                      edit={edit}
+                    />
                   <div>
                     <button onClick={() => setIsEditing(false)}>Cancel</button>
                   </div>
@@ -159,8 +129,15 @@ let mapStateToProps = state => {
   return { products, admin }
 }
 
+let mapToDispatchToProps = {
+  getProducts, 
+  deleteProduct, 
+  updateProduct, 
+  getAdmin
+}
 
-export default connect(mapStateToProps, { getProducts, deleteProduct, updateProduct, getAdmin })(Shop)
+
+export default connect(mapStateToProps, ( mapToDispatchToProps ))(Shop)
 
 const styles = {
   nav: {

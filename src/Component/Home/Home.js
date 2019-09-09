@@ -29,7 +29,6 @@ const styles = {
     height: '100vh',
     backgroundImage: 'url(https://www.tesla.com/content/dam/tesla-site/home-page/images/main-hero-desktop_compressed.jpg)',
     backgroundRepeat: 'no-repeat',
-    /* background-attachment: fixed; */
     backgroundSize: 'cover',
     backgroundPosition: 'right 50% bottom 25%'
   },

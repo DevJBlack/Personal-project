@@ -17,7 +17,7 @@ module.exports = {
         let products = await db.get_product(id)
         let product = products[0]
         res.send(product)
-    }catch ( error ) {
+    } catch ( error ) {
         console.log('error fetching posts:', error)
         res.status(500).send(error) 
     }
