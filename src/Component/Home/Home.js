@@ -27,7 +27,8 @@ export default Home
 const styles = {
   img: {
     height: '100vh',
-    backgroundImage: 'url(https://www.tesla.com/content/dam/tesla-site/home-page/images/main-hero-desktop_compressed.jpg)',
+    // backgroundImage: 'url(https://www.tesla.com/content/dam/tesla-site/home-page/images/main-hero-desktop_compressed.jpg)',
+    backgroundImage: 'url(https://www.tesla.com/ns_videos/homepage/main_hero_homepage_desktop.jpg)',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: 'right 50% bottom 25%'

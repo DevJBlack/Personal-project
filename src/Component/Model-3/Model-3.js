@@ -52,7 +52,7 @@ export default Model3
 const styles = {
   img: {
     height: '100vh',
-    backgroundImage: 'url(https://www.tesla.com/content/dam/tesla-site/sx-redesign/img/model3-proto/hero/model-3.jpg)',
+    backgroundImage: 'url(https://img.olhardigital.com.br/uploads/acervo_imagens/2019/12/r16x9/20191218023526_1200_675_-_tesla_model_3.jpg)',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: 'center'

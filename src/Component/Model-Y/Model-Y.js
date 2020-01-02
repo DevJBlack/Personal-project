@@ -55,7 +55,7 @@ export default ModelY
 const styles = {
   img: {
     height: '100vh',
-    backgroundImage: 'url(https://www.tesla.com/content/dam/tesla-site/wolverine/hero/model-y_R1@2.jpg/_jcr_content/renditions/cq5dam.tinypng.1440.auto.jpg)',
+    backgroundImage: 'url(https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fbillroberson%2Ffiles%2F2019%2F03%2FTesla-Model-Y-1200x675.jpg)',
     backgroundRepeat: 'no-repeat',
     /* background-attachment: fixed; */
     backgroundSize: 'cover',

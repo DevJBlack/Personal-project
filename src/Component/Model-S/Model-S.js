@@ -51,7 +51,7 @@ export default Model_S
 const styles = {
   img: {
     height: '100vh',
-    backgroundImage: 'url(https://www.tesla.com/content/dam/tesla-site/sx-redesign/img/models/hero/model-s-portrait.jpg?20170619)',
+    backgroundImage: 'url(https://www.tesla.com/sites/tesla/files/curatedmedia/model-s%402x.jpg)',
     backgroundRepeat: 'no-repeat',
     /* background-attachment: fixed; */
     backgroundSize: 'cover',

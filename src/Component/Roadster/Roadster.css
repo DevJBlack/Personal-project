@@ -110,9 +110,9 @@
   list-style: none;
   font-size: 12px;
   margin: 20px 0;
-    width: 75vw;
-    border-bottom: 1px solid white;
-    letter-spacing: 1px;
+  width: 75vw;
+  border-bottom: 1px solid white;
+  letter-spacing: 1px;
 }
 
 .roadsterList span {
